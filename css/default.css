@@ -149,6 +149,12 @@ li a
     height:620px;
 }
 
+/* FB */
+.fb
+{
+    height:620px;
+}
+
 /* Piste Map */
 .pistemap 
 {      
@@ -251,7 +257,7 @@ li a
 }
 .weather iframe
 {
-    height:800px;
+    height:2000px;
     width:100%;
 }
 
