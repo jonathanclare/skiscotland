@@ -2,10 +2,12 @@ html
 {
     box-sizing: border-box;
 }
+
 *, *:before, *:after 
 {
     box-sizing: inherit;
 }
+
 body
 {
     background:#f5f8fa;
@@ -25,6 +27,7 @@ body
     max-width: 1190px;
     padding:55px 10px 0px 10px;
 }
+
 /* Link defaults */
 a
 {
