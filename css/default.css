@@ -1,0 +1,336 @@
+html 
+{
+    box-sizing: border-box;
+}
+*, *:before, *:after 
+{
+    box-sizing: inherit;
+}
+body
+{
+    background:#f5f8fa;
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper 
+{
+    font-family: arial;
+    font-size: 14px;
+    color: #66757f;
+    text-align: center;
+
+    margin: 0 auto;
+
+    max-width: 1190px;
+    padding:55px 10px 0px 10px;
+}
+/* Link defaults */
+a
+{
+    color:#66757f;
+    text-decoration: none;
+}
+
+/* List defaults */
+ul
+{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+li a
+{
+    display: block;    
+}
+
+/* Flexbox defaults */
+.flex-box
+{
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+/* Stop text selection */
+.no-user-select
+{
+    -webkit-touch-callout: none;    
+    -webkit-user-select: none; 
+    -khtml-user-select: none;
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none;
+}
+
+/* Box */
+.box
+{
+    background-color: #fff;
+    border: 1px solid #e1e8ed;
+    border-radius: 5px;
+    margin:10px;
+    padding:10px;
+}
+
+/* Image ratios to prevent reflow */ 
+.ratio-16-9 {padding-bottom:56.25%;}
+.ratio-4-3 {padding-bottom:75%;}
+.ratio-1-1 {padding-bottom:100%;}
+.coe-pistemap {padding-bottom:104%;}
+.nevis-pistemap {padding-bottom:69%;}
+.shee-pistemap {padding-bottom:45%;}
+.gorm-pistemap {padding-bottom:65%;}
+.lecht-pistemap {padding-bottom:86%;}
+
+/* Image hover */
+.img-hover 
+{
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    background: rgba(117, 199, 235, 0);
+}
+.img-hover:hover
+{
+    background: rgba(117, 199, 235, 0.3);
+}
+
+/* Navigation */
+.nav 
+{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 46px;
+    line-height: 45px;
+    z-index: 1000;
+    white-space: nowrap;
+
+    background: #fff;
+    border-bottom: 1px solid #e1e8ed;
+
+    -webkit-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+    justify-content: center;
+}
+.nav a, .nav img
+{
+    padding: 0px 1.5vw;
+}
+.nav img
+{ 
+    height: 26px;
+    vertical-align: middle;
+}
+.nav li:hover
+{
+    background: #f4f9fb;
+    border-bottom: 4px solid;
+    border-color: rgba(117, 199, 235, 1);
+}
+.nav li.active
+{
+    border-bottom: 4px solid;
+    border-color: rgba(117, 199, 235, 1);
+}
+
+/* Twitter */
+.twitter
+{
+    height:620px;
+}
+
+/* Piste Map */
+.pistemap 
+{      
+    font-size: 25px;
+    color:#64c0e9;          
+}
+.pistemap a
+{      
+    display: block;    
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    background-color:#f5f8fa;
+}
+.pistemap div 
+{
+    margin-bottom: 10px;
+}
+.pistemap img 
+{
+    max-width:100%;
+    height:auto;
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+.pistemap img[data-src] 
+{
+    opacity: 0;
+}
+
+/* Links to external sites */
+.links 
+{
+    padding: 0;
+    -webkit-flex-flow: column wrap;
+    flex-flow: column wrap;
+    justify-content: center;
+}
+.links a 
+{
+    padding: 10px;
+    border-bottom: 1px solid #e1e8ed;
+}
+.links a:hover
+{
+    background: #f4f9fb;
+}
+.links li:last-of-type a 
+{ 
+    border: none; 
+}
+
+/* thumbnails */
+.thumbnails 
+{
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+}
+.thumbnails li 
+{ 
+    flex: auto;
+    width: calc(100% - 1vw);
+    margin: .5vw; 
+}
+.thumbnails a 
+{ 
+    position: relative;
+    /*display: inline-block;*/
+    height: 0;
+    overflow: hidden;
+    background-color:#f5f8fa;
+}
+.thumbnails img 
+{
+    max-width:100%;
+    height:auto;
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+.thumbnails img[data-src] 
+{
+    opacity: 0;
+}
+.thumbnails span 
+{
+    z-index:2;
+    padding: 3px;
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    background: rgba(117, 199, 235, 1);
+    color: #fff;    
+}
+
+/* weather */
+.weather
+{
+
+}
+.weather iframe
+{
+    height:800px;
+    width:100%;
+}
+
+/* Layout */
+/* smartphones, iPhone, portrait 480x320 phones */
+.container-1
+{
+    -webkit-flex-flow: column nowrap;
+    flex-flow:  column nowrap;
+}
+.container-2
+{
+    -webkit-flex-flow: column nowrap;
+    flex-flow:  column nowrap;
+}
+.container-3 
+{
+    -webkit-flex-flow: column nowrap;
+    flex-flow:  column nowrap;
+}
+@media all and (min-width: 321px) 
+{
+    /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide */
+    /*body  {background:red;}*/
+}
+@media all and (min-width: 481px) 
+{
+    /* iPadPortrait */
+    /*body  {background:green;}*/
+    .thumbnails li 
+    { 
+        width: calc(50% - 1vw);
+    }
+}
+@media all and (min-width: 641px) 
+{
+    /* iPadLandscape */
+    /*body  {background:blue;}*/
+    .container-1
+    {
+        -webkit-flex-flow: row nowrap;
+        flex-flow: row nowrap;
+    }
+    .container-2
+    {
+        flex: 1;
+    }
+    .container-3
+    {
+        flex: 1.5;
+    }
+}
+@media all and (min-width: 961px) 
+{
+    /* laptop */
+    /*body  {background:purple;}*/
+    .container-2
+    {
+        flex:1;
+        -webkit-flex-flow: column nowrap;
+        flex-flow: column nowrap;
+    }
+    .container-3
+    {
+        flex:2;
+    }
+    .thumbnails li 
+    { 
+        width: calc(33.3% - 1vw);
+    }      
+}
+@media all and (min-width: 1025px) 
+{
+    /* desktop */
+    /*body  {background:pink;}*/
+}
+@media all and (min-width: 1281px) 
+{
+    /*body  {background:brown;}*/
+}
+@media all and (min-width: 1601px) 
+{
+    /* widescreen */
+    /*body  {background:indigo;}*/
+}

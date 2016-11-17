@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="">
+    <head>
+        <title>Ski Scotland</title>
+        <link rel="icon" href="./snowflake.png">
+
+        <meta name="description" content="Ski Scotland">
+        <meta name="keywords" content="Ski Scotland">
+
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" type="text/css" href="./css/default.css"  />
+        <script src="./js/main.js"></script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <ul class="nav flex-box no-user-select">  
+                <li><img src="./img/snowflake.png" /></li>
+                <li><a href="#" onclick="openArea('index');return false;">Coe</a></li>
+                <li><a href="#" onclick="openArea('nevis');return false;">Nevis</a></li>
+                <li><a href="#" onclick="openArea('shee');return false;">Shee</a></li>
+                <li class="active"><a href="#" onclick="openArea('gorm');return false;">Gorm</a></li>
+                <li><a href="#" onclick="openArea('lecht');return false;" class="count">Lecht</a></li>
+            </ul>
+            <div id="gorm" class="skiarea flex-box container-1">
+                <div class="flex-box container-2">                          
+                    <div class="box pistemap"><div>Cairngorm</div><a class="gorm-pistemap" target="_blank" href="./img/gorm.jpg"><div class="img-hover"></div><img data-src="./img/gorm.jpg"></a></div>
+                    <ul class="flex-box links box no-user-select">  
+                        <li><a href="http://www.sais.gov.uk/northern-cairngorms/" target="_blank">Avalanche Report</a></li>
+                        <li><a href="http://www.mwis.org.uk/text/EH" target="_blank">Mountain Forecast</a></li>
+                        <li><a href="https://www.google.com/maps/dir/Current+Location/CairnGorm+Mountain,+Aviemore/data=!4m2!4m1!3e0" target="_blank">Directions</a></li>
+                        <li><a href="https://www.facebook.com/CairnGormMtn/" target="_blank">Facebook</a></li>
+                        <li><a href="http://www.cairngormmountain.org/" target="_blank">Website</a></li>
+                    </ul>
+                    <div class="box twitter"><a class="twitter-timeline" href="https://twitter.com/CairngormMtn" data-widget-id="697428322679185408" data-widget-id="697422187578392576" data-chrome="noborders transparent">Tweets by @CairngormMtn</a></div>
+                </div>
+                <div class="flex-box container-3">
+                    <ul class="flex-box thumbnails box">
+                        <li><a class="ratio-4-3" target="_blank" href="http://www.winterhighland.info/cams/cairngorm-mountain/lady.jpeg"><span>White Lady</span><div class="img-hover"></div><img data-src="http://www.winterhighland.info/cams/cairngorm-mountain/lady.jpeg" onerror="this.src='./img/no_photo_icon.jpg';"></a></li>
+                        <li><a class="ratio-4-3" target="_blank" href="http://www.winterhighland.info/cams/cairngorm-mountain/ssc.jpeg"><span>Lower Slopes</span><div class="img-hover"></div><img data-src="http://www.winterhighland.info/cams/cairngorm-mountain/ssc.jpeg" onerror="this.src='./img/no_photo_icon.jpg';"></a></li>
+                        <li><a class="ratio-4-3" target="_blank" href="http://www.winterhighland.info/cams/cairngorm-mountain/mid.jpeg"><span>Lower White Lady</span><div class="img-hover"></div><img data-src="http://www.winterhighland.info/cams/cairngorm-mountain/mid.jpeg" onerror="this.src='./img/no_photo_icon.jpg';"></a></li>
+                        <li><a class="ratio-4-3" target="_blank" href="http://www.winterhighland.info/cams/aviemore/cairngorm.jpeg"><span>View From Inverdruie</span><div class="img-hover"></div><img data-src="http://www.winterhighland.info/cams/aviemore/cairngorm.jpeg" onerror="this.src='./img/no_photo_icon.jpg';"></a></li>
+                    </ul>
+                    <div class="box weather"><iframe frameborder="0" src="http://www.mwis.org.uk/text/EH" class="weather-frame"></iframe></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="">
+    <head>
+        <title>Ski Scotland</title>
+        <link rel="icon" href="./snowflake.png">
+
+        <meta name="description" content="Ski Scotland">
+        <meta name="keywords" content="Ski Scotland">
+
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" type="text/css" href="./css/default.css"  />
+        <script src="./js/main.js"></script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <ul class="nav flex-box no-user-select">  
+                <li><img src="./img/snowflake.png" /></li>
+                <li><a href="#" onclick="openArea('index');return false;">Coe</a></li>
+                <li class="active"><a href="#" onclick="openArea('nevis');return false;">Nevis</a></li>
+                <li><a href="#" onclick="openArea('shee');return false;">Shee</a></li>
+                <li><a href="#" onclick="openArea('gorm');return false;">Gorm</a></li>
+                <li><a href="#" onclick="openArea('lecht');return false;" class="count">Lecht</a></li>
+            </ul>
+            <div id="nevis" class="skiarea flex-box container-1">
+                <div class="flex-box container-2">                         
+                    <div class="box pistemap"><div>Nevis</div><a class="nevis-pistemap" target="_blank" href="./img/nevis.jpg"><div class="img-hover"></div><img data-src="./img/nevis.jpg"></a></div>
+                    <ul class="flex-box links box no-user-select">  
+                        <li><a href="http://www.sais.gov.uk/lochaber/" target="_blank">Avalanche Report</a></li>
+                        <li><a href="http://www.mwis.org.uk/text/WH" target="_blank">Mountain Forecast</a></li>
+                        <li><a href="https://www.google.com/maps/dir/Current+Location/Nevis+Range+Mountain+Resort,+Torlundy,+Fort+William/data=!4m2!4m1!3e0" target="_blank">Directions</a></li>
+                        <li><a href="https://www.facebook.com/NevisRangeSNOW/" target="_blank">Facebook</a></li>
+                        <li><a href="http://www.nevisrange.co.uk/" target="_blank">Website</a></li>
+                    </ul>
+                    <div class="box twitter"><a class="twitter-timeline" href="https://twitter.com/TheNevisRange" data-widget-id="697422187578392576" data-chrome="noborders transparent">Tweets by @TheNevisRange</a></div>
+                </div>
+                <div class="flex-box container-3">
+                    <ul class="flex-box thumbnails box">
+                        <li><a class="ratio-16-9" target="_blank" href="http://www.winterhighland.info/cams/nevisrange/goose2.jpeg"><span>The Goose</span><div class="img-hover"></div><img data-src="http://www.winterhighland.info/cams/nevisrange/goose2.jpeg" onerror="this.src='./img/no_photo_icon.jpg';"></a></li>
+                        <li><a class="ratio-16-9" target="_blank" href="http://www.winterhighland.info/cams/nevisrange/goose.jpeg"><span>The Goose</span><div class="img-hover"></div><img data-src="http://www.winterhighland.info/cams/nevisrange/goose.jpeg" onerror="this.src='./img/no_photo_icon.jpg';"></a></li>
+                        <li><a class="ratio-16-9" target="_blank" href="http://www.winterhighland.info/cams/nevisrange/braveheart.jpeg"><span>Braveheart</span><div class="img-hover"></div><img data-src="http://www.winterhighland.info/cams/nevisrange/braveheart.jpeg" onerror="this.src='./img/no_photo_icon.jpg';"></a></li>
+                        <li><a class="ratio-16-9" target="_blank" href="http://webcam.nevisrange.co.uk/image1.jpg"><span>Base</span><div class="img-hover"></div><img data-src="http://webcam.nevisrange.co.uk/image1.jpg" onerror="this.src='./img/no_photo_icon.jpg';"></a></li>
+                        <li><a class="ratio-16-9" target="_blank" href="http://webcam.nevisrange.co.uk/image8.jpg"><span>Base</span><div class="img-hover"></div><img data-src="http://webcam.nevisrange.co.uk/image8.jpg" onerror="this.src='./img/no_photo_icon.jpg';"></a></li>
+                    </ul>
+                    <div class="box weather"><iframe frameborder="0" src="http://www.mwis.org.uk/text/WH" class="weather-frame"></iframe></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
