@@ -25,7 +25,7 @@ body
     margin: 0 auto;
 
     max-width: 1190px;
-    padding:55px 10px 0px 10px;
+    padding:55px 5px 0px 5px;
 }
 
 /* Link defaults */
@@ -207,6 +207,38 @@ li a
     border: none; 
 }
 
+.icon-links 
+{
+    -webkit-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+}
+.icon-links  li 
+{ 
+    flex: auto;
+}
+.icon-links  a 
+{ 
+    display: block;    
+    height: 0;
+    overflow: hidden;
+}
+.icon-links img 
+{
+    width:100%;
+    height:auto;
+    max-width:80px;
+    opacity: 0.7;
+    transition: opacity 0.5s;
+}
+.icon-links img:hover
+{
+    opacity: 1;
+}
+.icon-links img[data-src] 
+{
+    opacity: 0;
+}
+
 /* thumbnails */
 .thumbnails 
 {
@@ -216,7 +248,7 @@ li a
 .thumbnails li 
 { 
     flex: auto;
-    width: calc(100% - 1vw);
+    width: calc(50% - 1vw);
     margin: .5vw; 
 }
 .thumbnails a 
@@ -296,6 +328,20 @@ li a
 {
     /* iPadLandscape */
     /*body  {background:blue;}*/
+    .container-2
+    {
+        -webkit-flex-flow: row nowrap;
+        flex-flow: row nowrap;
+    }
+    .container-2 *
+    {
+        flex:1;
+    }
+}
+@media all and (min-width: 961px) 
+{
+    /* laptop */
+    /*body  {background:purple;}*/
     .container-1
     {
         -webkit-flex-flow: row nowrap;
@@ -303,31 +349,20 @@ li a
     }
     .container-2
     {
-        flex: 1;
-    }
-    .container-3
-    {
-        flex: 1.5;
-    }
-}
-@media all and (min-width: 961px) 
-{
-    /* laptop */
-    /*body  {background:purple;}*/
-    .container-2
-    {
+        order:1;
         flex:1;
         -webkit-flex-flow: column nowrap;
         flex-flow: column nowrap;
     }
     .container-3
     {
+        order:2;
         flex:2;
     }
     .thumbnails li 
     { 
         width: calc(33.3% - 1vw);
-    }      
+    }  
 }
 @media all and (min-width: 1025px) 
 {

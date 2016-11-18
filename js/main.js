@@ -5,7 +5,7 @@ window.onload = function ()
  } 
 
 // Remove filename from location.
-history.replaceState({}, document.title, '.');
+//history.replaceState({}, document.title, '.');
 var twitterLoaded = false;
 var fbLoaded = false;
 
