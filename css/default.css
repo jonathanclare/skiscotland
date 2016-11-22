@@ -24,8 +24,8 @@ body
 
     margin: 0 auto;
 
-    max-width: 1190px;
-    padding:55px 5px 0px 5px;
+    max-width: 1500px;
+    padding:65px 20px 0px 20px;
 }
 
 /* Link defaults */
@@ -74,8 +74,8 @@ li a
     background-color: #fff;
     border: 1px solid #e1e8ed;
     border-radius: 5px;
-    margin:10px;
-    padding:10px;
+    margin:5px;
+    padding:5px;
 }
 
 /* Image ratios to prevent reflow */ 
@@ -146,13 +146,13 @@ li a
 /* Twitter */
 .twitter
 {
-    height:620px;
+    height:600px;
 }
 
 /* FB */
 .fb
 {
-    height:620px;
+    height:600px;
 }
 
 /* Piste Map */
@@ -211,10 +211,10 @@ li a
 {
     -webkit-flex-flow: row nowrap;
     flex-flow: row nowrap;
+    justify-content: center;
 }
 .icon-links  li 
 { 
-    flex: auto;
 }
 .icon-links  a 
 { 
@@ -226,7 +226,6 @@ li a
 {
     width:100%;
     height:auto;
-    max-width:80px;
     opacity: 0.7;
     transition: opacity 0.5s;
 }
@@ -300,15 +299,19 @@ li a
     -webkit-flex-flow: column nowrap;
     flex-flow:  column nowrap;
 }
-.container-2
+.container-2 
 {
     -webkit-flex-flow: column nowrap;
     flex-flow:  column nowrap;
 }
-.container-3 
+.container-3
 {
     -webkit-flex-flow: column nowrap;
     flex-flow:  column nowrap;
+}
+.container-3 *
+{
+    flex:1;
 }
 @media all and (min-width: 321px) 
 {
@@ -319,29 +322,43 @@ li a
 {
     /* iPadPortrait */
     /*body  {background:green;}*/
-    .thumbnails li 
-    { 
-        width: calc(50% - 1vw);
-    }
 }
 @media all and (min-width: 641px) 
 {
     /* iPadLandscape */
     /*body  {background:blue;}*/
-    .container-2
+    .container-3
     {
         -webkit-flex-flow: row nowrap;
         flex-flow: row nowrap;
     }
-    .container-2 *
-    {
-        flex:1;
-    }
+    .thumbnails li 
+    { 
+        width: calc(33.3% - 1vw);
+    }  
 }
 @media all and (min-width: 961px) 
 {
     /* laptop */
     /*body  {background:purple;}*/
+}
+@media all and (min-width: 1025px) 
+{
+    /* desktop */
+    /*body  {background:pink;}*/
+    .thumbnails li 
+    { 
+        width: calc(20% - 1vw);
+    }  
+    .box
+    {
+        margin:10px;
+        padding:10px;
+    }
+}
+@media all and (min-width: 1281px) 
+{
+    /*body  {background:brown;}*/
     .container-1
     {
         -webkit-flex-flow: row nowrap;
@@ -349,29 +366,16 @@ li a
     }
     .container-2
     {
-        order:1;
         flex:1;
-        -webkit-flex-flow: column nowrap;
-        flex-flow: column nowrap;
     }
     .container-3
     {
-        order:2;
         flex:2;
     }
     .thumbnails li 
     { 
-        width: calc(33.3% - 1vw);
+        width: calc(50% - 1vw);
     }  
-}
-@media all and (min-width: 1025px) 
-{
-    /* desktop */
-    /*body  {background:pink;}*/
-}
-@media all and (min-width: 1281px) 
-{
-    /*body  {background:brown;}*/
 }
 @media all and (min-width: 1601px) 
 {
