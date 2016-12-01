@@ -218,7 +218,6 @@ li a
 }
 .icon-links  a 
 { 
-    display: block;    
     height: 0;
     overflow: hidden;
 }
