@@ -1,2 +1,2 @@
-# skiscotland
+# Ski Scotland
 Ski Scotland
