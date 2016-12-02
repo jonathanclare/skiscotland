@@ -88,7 +88,7 @@ li a
 .gorm-pistemap {padding-bottom:65%;}
 .lecht-pistemap {padding-bottom:86%;}
 
-/* Image hover */
+/* Image overlay */
 .overlay 
 {
     position: absolute; 
@@ -285,11 +285,12 @@ li a
 }
 @media all and (min-width: 1025px) 
 {
-    /* desktop */
+    /* laptops and desktops */
     /*body  {background:pink;}*/
 }
 @media all and (min-width: 1281px) 
 {
+    /* hi-res laptops and desktops */
     /*body  {background:brown;}*/
     .container-1
     {
