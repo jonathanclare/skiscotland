@@ -1,50 +1,59 @@
 <!doctype html>
-<html lang="">
+<html lang="en">
     <head>
         <title>Ski Scotland</title>
         <link rel="icon" href="./img/snowflake.png">
-
-        <meta name="description" content="Ski Scotland">
-        <meta name="keywords" content="Ski Scotland">
 
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <!-- Keywords for google search -->
+        <meta name="description" content="Ski Scotland">
+        <meta name="keywords" content="Ski Scotland">
+
+        <!-- Styles -->
         <link rel="stylesheet" type="text/css" href="./css/main.css"  />
+
+        <!-- JavaScript -->
         <script src="./js/main.js"></script>
     </head>
     <body>
-        <div class="wrapper">
-            <ul class="nav flex-box no-user-select">  
-                <li><img src="./img/snowflake.png" /></li>
-                <li><a href="#" onclick="openArea('index');return false;">Coe</a></li>
-                <li><a href="#" onclick="openArea('nevis');return false;">Nevis</a></li>
-                <li><a href="#" onclick="openArea('shee');return false;">Shee</a></li>
-                <li class="active"><a href="#" onclick="openArea('gorm');return false;">Gorm</a></li>
-                <li><a href="#" onclick="openArea('lecht');return false;" class="count">Lecht</a></li>
-            </ul>
-            <div id="gorm" class="skiarea flex-box container-1">
-                <div class="flex-box container-2">   
-                    <ul class="flex-box links box no-user-select">  
-                        <li><a href="./img/gorm.jpg" target="_blank">Piste Map</a></li>
-                        <li><a href="http://www.sais.gov.uk/northern-cairngorms/" target="_blank">Avalanche Report</a></li>
-                        <li><a href="http://www.mwis.org.uk/text/EH" target="_blank">Mountain Forecast</a></li>
-                        <li><a href="https://www.google.com/maps/dir/Current+Location/CairnGorm+Mountain,+Aviemore/data=!4m2!4m1!3e0" target="_blank">Directions</a></li>
-                        <li><a href="http://www.cairngormmountain.org/" target="_blank">Website</a></li>
-                    </ul>
-                    <ul class="flex-box thumbnails box">
-                        <li><a class="ratio-4-3" target="_blank" href="http://www.winterhighland.info/cams/cairngorm-mountain/lady.jpeg"><span>White Lady</span><div class="overlay"></div><img data-src="http://www.winterhighland.info/cams/cairngorm-mountain/lady.jpeg" onerror="this.src='./img/no_photo_icon.jpg';"></a></li>
-                        <li><a class="ratio-4-3" target="_blank" href="http://www.winterhighland.info/cams/cairngorm-mountain/ssc.jpeg"><span>Lower Slopes</span><div class="overlay"></div><img data-src="http://www.winterhighland.info/cams/cairngorm-mountain/ssc.jpeg" onerror="this.src='./img/no_photo_icon.jpg';"></a></li>
-                        <li><a class="ratio-4-3" target="_blank" href="http://www.winterhighland.info/cams/cairngorm-mountain/mid.jpeg"><span>Lower White Lady</span><div class="overlay"></div><img data-src="http://www.winterhighland.info/cams/cairngorm-mountain/mid.jpeg" onerror="this.src='./img/no_photo_icon.jpg';"></a></li>
-                        <li><a class="ratio-4-3" target="_blank" href="http://www.winterhighland.info/cams/aviemore/cairngorm.jpeg"><span>View From Inverdruie</span><div class="overlay"></div><img data-src="http://www.winterhighland.info/cams/aviemore/cairngorm.jpeg" onerror="this.src='./img/no_photo_icon.jpg';"></a></li>
-                    </ul>
+
+        <!-- Header -->
+        <nav role="navigation" class="nav header flex-box">  
+            <a class="nav-icon flex-box" href="#"><img src="./img/snowflake.png" alt="Logo" /></a>
+            <a class="nav-link flex-box" href="./index.html">Coe</a> 
+            <a class="nav-link flex-box" href="./nevis.html">Nevis</a> 
+            <a class="nav-link flex-box" href="./shee.html">Shee</a> 
+            <a class="nav-link nav-link-active flex-box" href="./gorm.html">Gorm</a> 
+            <a class="nav-link flex-box" href="./lecht.html">Lecht</a> 
+        </nav>
+
+        <!-- Footer -->
+        <nav role="navigation" class="nav footer flex-box">  
+            <a class="nav-link flex-box" href="./img/gorm.jpg" target="_blank">PISTE</a> 
+            <a class="nav-link flex-box" href="http://www.sais.gov.uk/northern-cairngorms/" target="_blank">SAIS</a> 
+            <a class="nav-link flex-box" href="http://www.mwis.org.uk/text/EH" target="_blank">MWIS</a> 
+            <a class="nav-link flex-box" href="https://www.google.com/maps/dir/Current+Location/CairnGorm+Mountain,+Aviemore/data=!4m2!4m1!3e0" target="_blank">DIR</a> 
+            <a class="nav-link flex-box" href="http://www.cairngormmountain.org/" target="_blank">WEB</a> 
+        </nav>
+
+        <!-- Main content -->
+        <main class="main flex-box">
+
+            <div class="webcams box flex-box">
+                <div class="flex-box">
+                    <div><div class="bg-img ratio-4-3" style="background-image:url('http://www.winterhighland.info/cams/cairngorm-mountain/lady.jpeg')" title="White Lady<"></div></div>
                 </div>
-                <div class="flex-box container-3">
-                    <div class="box twitter"><a class="twitter-timeline" href="https://twitter.com/CairngormMtn" data-widget-id="697428322679185408" data-widget-id="697422187578392576" data-chrome="noborders transparent">Tweets</a></div>
-                    <div class="box fb"><div class="fb-page" data-href="https://www.facebook.com/CairnGormMtn/" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false"><blockquote cite="https://www.facebook.com/CairnGormMtn/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/CairnGormMtn/">Facebook</a></blockquote></div></div>
+                <div class="flex-box">
+                    <div><div class="bg-img ratio-4-3" style="background-image:url('http://www.winterhighland.info/cams/cairngorm-mountain/ssc.jpeg')" title="Lower Slopes"></div></div>
+                    <div><div class="bg-img ratio-4-3" style="background-image:url('http://www.winterhighland.info/cams/cairngorm-mountain/mid.jpeg')" title="Lower White Lady"></div></div>
+                    <div><div class="bg-img ratio-4-3" style="background-image:url('http://www.winterhighland.info/cams/aviemore/cairngorm.jpeg')" title="View From Inverdruie"></div></div>
                 </div>
             </div>
-        </div>
+            <div class="twitter box"><a class="twitter-timeline" data-height="800" href="https://twitter.com/CairngormMtn" data-widget-id="697428322679185408" data-widget-id="697422187578392576" data-chrome="noborders transparent">Tweets</a></div>
+            <div class="fb box"><div class="fb-page" data-height="800" data-href="https://www.facebook.com/CairnGormMtn/" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false"><blockquote cite="https://www.facebook.com/CairnGormMtn/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/CairnGormMtn/">Facebook</a></blockquote></div></div>
+        </main>
     </body>
 </html>

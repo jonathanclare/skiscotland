@@ -1,54 +1,67 @@
 <!doctype html>
-<html lang="">
+<html lang="en">
     <head>
         <title>Ski Scotland</title>
         <link rel="icon" href="./img/snowflake.png">
-
-        <meta name="description" content="Ski Scotland">
-        <meta name="keywords" content="Ski Scotland">
 
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <!-- Keywords for google search -->
+        <meta name="description" content="Ski Scotland">
+        <meta name="keywords" content="Ski Scotland">
+
+        <!-- Styles -->
         <link rel="stylesheet" type="text/css" href="./css/main.css"  />
+
+        <!-- JavaScript -->
         <script src="./js/main.js"></script>
     </head>
     <body>
-        <div class="wrapper">
-            <ul class="nav flex-box no-user-select">  
-                <li><img src="./img/snowflake.png" /></li>
-                <li><a href="#" onclick="openArea('index');return false;">Coe</a></li>
-                <li><a href="#" onclick="openArea('nevis');return false;">Nevis</a></li>
-                <li class="active"><a href="#" onclick="openArea('shee');return false;">Shee</a></li>
-                <li><a href="#" onclick="openArea('gorm');return false;">Gorm</a></li>
-                <li><a href="#" onclick="openArea('lecht');return false;" class="count">Lecht</a></li>
-            </ul>
-            <div id="shee" class="skiarea flex-box container-1">
-                <div class="flex-box container-2">    
-                    <ul class="flex-box links box no-user-select">  
-                        <li><a href="./img/shee.jpg" target="_blank">Piste Map</a></li>
-                        <li><a href="http://www.sais.gov.uk/southern-cairngorms/" target="_blank">Avalanche Report</a></li>
-                        <li><a href="http://www.mwis.org.uk/text/EH" target="_blank">Mountain Forecast</a></li>
-                        <li><a href="https://www.google.com/maps/dir/Current+Location/Glenshee+Ski+Centre/data=!4m2!4m1!3e0" target="_blank">Directions</a></li>
-                        <li><a href="http://ski-glenshee.co.uk/" target="_blank">Website</a></li>
-                    </ul>
-                    <ul class="flex-box thumbnails box">
-                        <li><a class="ratio-16-9" target="_blank" href="http://www.webcam-hd.com/Images/ski-scotland_glenshee/zooms/ski-scotland_glenshee7.jpg"><span>Tiger</span><div class="overlay"></div><img data-src="http://www.webcam-hd.com/Images/ski-scotland_glenshee/zooms/ski-scotland_glenshee7.jpg" onerror="this.src='./img/no_photo_icon.jpg';"></a></li>
-                        <li><a class="ratio-16-9" target="_blank" href="http://www.webcam-hd.com/Images/ski-scotland_glenshee/zooms/ski-scotland_glenshee2.jpg"><span>Claybokie</span><div class="overlay"></div><img data-src="http://www.webcam-hd.com/Images/ski-scotland_glenshee/zooms/ski-scotland_glenshee2.jpg" onerror="this.src='./img/no_photo_icon.jpg';"></a></li>
-                        <li><a class="ratio-16-9" target="_blank" href="http://www.webcam-hd.com/Images/ski-scotland_glenshee/zooms/ski-scotland_glenshee5.jpg"><span>Butcharts</span><div class="overlay"></div><img data-src="http://www.webcam-hd.com/Images/ski-scotland_glenshee/zooms/ski-scotland_glenshee5.jpg" onerror="this.src='./img/no_photo_icon.jpg';"></a></li>
-                        <li><a class="ratio-16-9" target="_blank" href="http://www.webcam-hd.com/Images/ski-scotland_glenshee/zooms/ski-scotland_glenshee0.jpg"><span>Beginners Area</span><div class="overlay"></div><img data-src="http://www.webcam-hd.com/Images/ski-scotland_glenshee/zooms/ski-scotland_glenshee0.jpg" onerror="this.src='./img/no_photo_icon.jpg';"></a></li>
-                        <li><a class="ratio-16-9" target="_blank" href="http://www.webcam-hd.com/Images/ski-scotland_glenshee/zooms/ski-scotland_glenshee1.jpg"><span>Sunnyside</span><div class="overlay"></div><img data-src="http://www.webcam-hd.com/Images/ski-scotland_glenshee/zooms/ski-scotland_glenshee1.jpg" onerror="this.src='./img/no_photo_icon.jpg';"></a></li>
-                        <li><a class="ratio-16-9" target="_blank" href="http://www.webcam-hd.com/Images/ski-scotland_glenshee/zooms/ski-scotland_glenshee3.jpg"><span>Meall Odhar</span><div class="overlay"></div><img data-src="http://www.webcam-hd.com/Images/ski-scotland_glenshee/zooms/ski-scotland_glenshee3.jpg" onerror="this.src='./img/no_photo_icon.jpg';"></a></li>
-                        <li><a class="ratio-16-9" target="_blank" href="http://www.webcam-hd.com/Images/ski-scotland_glenshee/zooms/ski-scotland_glenshee4.jpg"><span>Caenlochan</span><div class="overlay"></div><img data-src="http://www.webcam-hd.com/Images/ski-scotland_glenshee/zooms/ski-scotland_glenshee4.jpg" onerror="this.src='./img/no_photo_icon.jpg';"></a></li>
-                        <li><a class="ratio-16-9" target="_blank" href="http://www.webcam-hd.com/Images/ski-scotland_glenshee/zooms/ski-scotland_glenshee6.jpg"><span>Cairnwell</span><div class="overlay"></div><img data-src="http://www.webcam-hd.com/Images/ski-scotland_glenshee/zooms/ski-scotland_glenshee6.jpg" onerror="this.src='./img/no_photo_icon.jpg';"></a></li>
-                    </ul>
+
+        <!-- Header -->
+        <nav role="navigation" class="nav header flex-box">  
+            <a class="nav-icon flex-box" href="#"><img src="./img/snowflake.png" alt="Logo" /></a>
+            <a class="nav-link flex-box" href="./index.html">Coe</a> 
+            <a class="nav-link flex-box" href="./nevis.html">Nevis</a> 
+            <a class="nav-link nav-link-active flex-box" href="./shee.html">Shee</a> 
+            <a class="nav-link flex-box" href="./gorm.html">Gorm</a> 
+            <a class="nav-link flex-box" href="./lecht.html">Lecht</a> 
+        </nav>
+
+        <!-- Footer -->
+        <nav role="navigation" class="nav footer flex-box">  
+            <a class="nav-link flex-box" href="./img/shee.jpg" target="_blank">PISTE</a> 
+            <a class="nav-link flex-box" href="http://www.sais.gov.uk/southern-cairngorms/" target="_blank">SAIS</a> 
+            <a class="nav-link flex-box" href="http://www.mwis.org.uk/text/EH" target="_blank">MWIS</a> 
+            <a class="nav-link flex-box" href="https://www.google.com/maps/dir/Current+Location/Glenshee+Ski+Centre/data=!4m2!4m1!3e0" target="_blank" target="_blank">DIR</a> 
+            <a class="nav-link flex-box" href="http://ski-glenshee.co.uk/" target="_blank">WEB</a> 
+        </nav>
+
+        <!-- Main content -->
+        <main class="main flex-box">
+
+            <div class="webcams box flex-box">
+                <div class="flex-box">
+                    <div><div class="bg-img ratio-16-9" style="background-image:url('http://www.webcam-hd.com/Images/ski-scotland_glenshee/zooms/ski-scotland_glenshee0.jpg')" title="Beginners Area"></div></div>
                 </div>
-                <div class="flex-box container-3">
-                    <div class="box twitter"><a class="twitter-timeline" href="https://twitter.com/theglenshee" data-widget-id="697428577235705861" data-widget-id="697422187578392576" data-chrome="noborders transparent">Tweets</a></div>   
-                    <div class="box fb"><div class="fb-page" data-href="https://www.facebook.com/GlensheeSkiCentre/" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false"><blockquote cite="https://www.facebook.com/GlensheeSkiCentre/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/GlensheeSkiCentre/">Facebook</a></blockquote></div></div>             
+                <div class="flex-box">
+                    <div><div class="bg-img ratio-16-9" style="background-image:url('http://www.webcam-hd.com/Images/ski-scotland_glenshee/zooms/ski-scotland_glenshee1.jpg')" title="Sunnyside"></div></div>
+                    <div><div class="bg-img ratio-16-9" style="background-image:url('http://www.webcam-hd.com/Images/ski-scotland_glenshee/zooms/ski-scotland_glenshee2.jpg')" title="Claybokie"></div></div>
+                </div>
+                <div class="flex-box">
+                    <div><div class="bg-img ratio-16-9" style="background-image:url('http://www.webcam-hd.com/Images/ski-scotland_glenshee/zooms/ski-scotland_glenshee3.jpg')" title="Meall Odhar"></div></div>
+                    <div><div class="bg-img ratio-16-9" style="background-image:url('http://www.webcam-hd.com/Images/ski-scotland_glenshee/zooms/ski-scotland_glenshee4.jpg')" title="Caenlochan"></div></div>
+                </div>
+                <div class="flex-box">
+                    <div><div class="bg-img ratio-16-9" style="background-image:url('http://www.webcam-hd.com/Images/ski-scotland_glenshee/zooms/ski-scotland_glenshee5.jpg')" title="Butcharts"></div></div>
+                    <div><div class="bg-img ratio-16-9" style="background-image:url('http://www.webcam-hd.com/Images/ski-scotland_glenshee/zooms/ski-scotland_glenshee6.jpg')" title="Cairnwell"></div></div>
+                    <div><div class="bg-img ratio-16-9" style="background-image:url('http://www.webcam-hd.com/Images/ski-scotland_glenshee/zooms/ski-scotland_glenshee7.jpg')" title="Tiger"></div></div>
                 </div>
             </div>
-        </div>
+            <div class="twitter box"><a class="twitter-timeline" data-height="800" href="https://twitter.com/theglenshee" data-widget-id="697428577235705861" data-widget-id="697422187578392576" data-chrome="noborders transparent">Tweets</a></div>   
+            <div class="fb box"><div class="fb-page" data-height="800" data-href="https://www.facebook.com/GlensheeSkiCentre/" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false"><blockquote cite="https://www.facebook.com/GlensheeSkiCentre/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/GlensheeSkiCentre/">Facebook</a></blockquote></div></div>             
+        </main>
     </body>
 </html>
