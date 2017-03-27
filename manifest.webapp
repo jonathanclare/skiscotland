@@ -1,8 +1,8 @@
 {
   "version": "1.0.0",
-  "name": "Ski Scotland",
+  "name": "Snow Scotland",
   "launch_path": "/index.html",
-  "description": "Fast access to scottish ski resources.",
+  "description": "Fast access to scottish snow resources.",
   "icons": {
     "128": "/img/snowflake.png"
   },
@@ -18,8 +18,8 @@
   },
   "locales": {
     "en": {
-      "name": "Ski Scotland",
-      "description": "Fast access to scottish ski resources."
+      "name": "Snow Scotland",
+      "description": "Fast access to scottish snow resources."
     }
   }
 }
