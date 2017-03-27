@@ -73,6 +73,7 @@
   }
 
 
+  // Your custom JavaScript goes here
 
 
 
@@ -264,5 +265,4 @@ function debounce(func, wait, immediate)
     };
 };
 
-  // Your custom JavaScript goes here
 })();
