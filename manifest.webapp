@@ -1,0 +1,25 @@
+{
+  "version": "1.0.0",
+  "name": "Ski Scotland",
+  "launch_path": "/index.html",
+  "description": "Fast access to scottish ski resources.",
+  "icons": {
+    "128": "/img/snowflake.png"
+  },
+  "developer": {
+    "name": "Jonathan CLare",
+    "url": "https://jonathanclare.github.io/"
+  },
+  "installs_allowed_from": [
+    "*"
+  ],
+  "default_locale": "en",
+  "permissions": {
+  },
+  "locales": {
+    "en": {
+      "name": "Ski Scotland",
+      "description": "Fast access to scottish ski resources."
+    }
+  }
+}
