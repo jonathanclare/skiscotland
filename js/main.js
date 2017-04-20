@@ -19,27 +19,24 @@
 /* eslint-env browser */
 (function() 
 {
-  'use strict';
+    'use strict';
 
     // Check to make sure service workers are supported in the current browser,
     // and that the current page is accessed from a secure origin. Using a
     // service worker from an insecure origin will trigger JS console errors. See
     // http://www.chromium.org/Home/chromium-security/prefer-secure-origins-for-powerful-new-features
     var isLocalhost = Boolean(window.location.hostname === 'localhost' ||
-      // [::1] is the IPv6 localhost address.
-      window.location.hostname === '[::1]' ||
-      // 127.0.0.1/8 is considered localhost for IPv4.
-      window.location.hostname.match(
-        /^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/
-      )
-    );
+    // [::1] is the IPv6 localhost address.
+    window.location.hostname === '[::1]' ||
+    // 127.0.0.1/8 is considered localhost for IPv4.
+    window.location.hostname.match(/^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/));
 
     if ('serviceWorker' in navigator && (window.location.protocol === 'https:' || isLocalhost)) 
     {
         navigator.serviceWorker.register('./service-worker.js').then(function(registration) 
         {
 
-console.log('ServiceWorker registration successful with scope:',  registration.scope);
+            console.log('ServiceWorker registration successful with scope:',  registration.scope);
             
             // updatefound is fired if service-worker.js changes.
             registration.onupdatefound = function() 
@@ -140,31 +137,110 @@ console.log('ServiceWorker registration successful with scope:',  registration.s
     }
 
     // Slideshow.
-    document.onkeydown = function(e) 
+    var xDown = null;                                                        
+    function slideShowOnTouchStart (evt) 
+    {             
+        xDown = evt.touches[0].clientX;                                      
+    }                                            
+    function slideShowOnTouchMove (evt) 
     {
-        e = e || window.event;
-        if (e.keyCode == '37')  prevSlide()
-        else if (e.keyCode == '39')  nextSlide();
-        else if (e.keyCode == '27')  closeSlideShow();
+        if (!xDown) return;
+        var xUp = evt.touches[0].clientX;     
+        var xDiff = xDown - xUp;
+        if ( xDiff > 0 ) nextSlide();
+        else  prevSlide();
+        xDown = null;
+    }
+    function slideShowOnKeyDown (evt)
+    {
+        evt = evt || window.event;
+        if (evt.keyCode == '37')  prevSlide()
+        else if (evt.keyCode == '39')  nextSlide();
+        else if (evt.keyCode == '27')  closeSlideShow();
+    }
+    function buildSlideShow()
+    {
+        var strHtml = '<div class="slideshow-slides">';
+
+        [].forEach.call(document.querySelectorAll('.slide'), function(elt, index) 
+        {
+            var src;
+            if (elt.nodeName == 'IMG') 
+                src = elt.getAttribute('src');
+            else     
+                src = window.getComputedStyle(elt).backgroundImage.replace('url(','').replace(')','').replace(/\"/gi, "");
+           
+            // Add click to open slideshow.
+            (function (_src) {
+                on(elt, 'click', function(e)
+                {
+                    openSlideShow(_src);
+                });
+            })(src);
+
+            var slideShowIcon = document.createElement('div');
+            addClass(slideShowIcon, 'slideshow-icon')
+            elt.appendChild(slideShowIcon);
+
+            var title = elt.getAttribute('title');
+
+            if (index === 0) 
+                strHtml += '<div class="slideshow-slide slideshow-slide-active">';
+            else 
+                strHtml += '<div class="slideshow-slide">';
+
+                    strHtml += '<div class="slideshow-img flex-box">';
+                        strHtml += '<img src="'+src+'" alt="'+title+'" />';
+                    strHtml += '</div>';
+                    strHtml += '<div class="slideshow-text">'+title+'</div>';
+                strHtml += '</div>';
+        });
+
+        strHtml += '</div>'
+        strHtml += '<div class="slideshow-prev flex-box" role="button" tabindex="0">&#10094;</div>';
+        strHtml += '<div class="slideshow-next flex-box" role="button" tabindex="0">&#10095;</div>';
+        strHtml += '<div class="slideshow-close flex-box" role="button" tabindex="0">&times;</div>';
+
+        var slideshow = document.createElement('div');
+        addClass(slideshow, 'slideshow no-select')
+        slideshow.innerHTML = strHtml; 
+        on(slideshow, 'click', function (e)
+        {
+            if (hasClass(e.target, 'slideshow-prev')) prevSlide();
+            else if (hasClass(e.target, 'slideshow-next') || hasClass(e.target, 'slideshow-img')) nextSlide();
+            else if (hasClass(e.target, 'slideshow-close')) closeSlideShow();
+        }, false);
+
+        document.querySelector('body').appendChild(slideshow);
     }
     function openSlideShow(src)
     {
-        document.querySelector('.slideshow-next').focus();
-
-        addClass(document.body, 'hide-scrollbars');
         var slideshow = document.querySelector('.slideshow');
-        if (src !== undefined)
+        if (slideshow !== null)
         {
-            var activeSlide = slideshow.querySelector('.slideshow-slide-active');
-            var nextSlide = slideshow.querySelector('img[src="'+src+'"], img[data-src="'+src+'"]').parentElement.parentElement;
-            addClass(nextSlide, 'slideshow-slide-active');
-            removeClass(activeSlide, 'slideshow-slide-active');
+            on(document, 'keydown', slideShowOnKeyDown);
+            on(document, 'touchstart', slideShowOnTouchStart);
+            on(document, 'touchmove', slideShowOnTouchMove);
+
+            addClass(document.body, 'slideshow-hide-scrollbars');
+            slideshow.querySelector('.slideshow-next').focus();
+            if (src !== undefined)
+            {
+                var activeSlide = slideshow.querySelector('.slideshow-slide-active');
+                var nextSlide = slideshow.querySelector('img[src="'+src+'"], img[data-src="'+src+'"]').parentElement.parentElement;
+                addClass(nextSlide, 'slideshow-slide-active');
+                removeClass(activeSlide, 'slideshow-slide-active');
+            }
+            addClass(slideshow, 'slideshow-active');
         }
-        addClass(slideshow, 'slideshow-active');
     }
     function closeSlideShow()
     {
-        removeClass(document.body, 'hide-scrollbars');
+        off(document, 'keydown', slideShowOnKeyDown);
+        off(document, 'touchstart', slideShowOnTouchStart);
+        off(document, 'touchmove', slideShowOnTouchMove);
+
+        removeClass(document.body, 'slideshow-hide-scrollbars');
         var slideshow = document.querySelector('.slideshow');
         removeClass(slideshow, 'slideshow-active');
     }
@@ -184,39 +260,6 @@ console.log('ServiceWorker registration successful with scope:',  registration.s
         addClass(prevSlide, 'slideshow-slide-active');
         removeClass(activeSlide, 'slideshow-slide-active');
     }
-    function buildSlideShow()
-    {
-        var strHtml = '<div class="slideshow-slides">';
-
-        [].forEach.call(document.querySelectorAll('.bg-img'), function(elt, index) 
-        {
-            var src = window.getComputedStyle(elt).backgroundImage.replace('url(','').replace(')','').replace(/\"/gi, "");
-
-            var title = elt.getAttribute('title');
-            if (index === 0)
-                strHtml += '<div class="slideshow-slide slideshow-slide-active"><div class="slideshow-img flex-box"><img src="'+src+'" alt="'+title+'" /></div><div class="slideshow-text">'+title+'</div></div>';
-            else
-                strHtml += '<div class="slideshow-slide"><div class="slideshow-img flex-box"><img src="'+src+'" alt="'+title+'" /></div><div class="slideshow-text">'+title+'</div></div>';
-
-            // Add click to open slideshow.
-            (function (_src) {
-                on(elt, 'click', function(e)
-                {
-                    openSlideShow(_src);
-                });
-            })(src);
-        });
-
-        strHtml += '</div>'
-        strHtml += '<div class="slideshow-prev flex-box" role="button" tabindex="0" onclick="prevSlide()">&#10094;</div>';
-        strHtml += '<div class="slideshow-next flex-box" role="button" tabindex="0" onclick="nextSlide()">&#10095;</div>';
-        strHtml += '<div class="slideshow-close flex-box" role="button" tabindex="0" onclick="closeSlideShow()">&times;</div>';
-
-        var slideshow = document.createElement('div');
-        addClass(slideshow, 'slideshow no-select')
-        slideshow.innerHTML = strHtml; 
-        document.querySelector('body').appendChild(slideshow);
-    }
 
     // Util functions.
     function addClass (element, className)
@@ -227,13 +270,27 @@ console.log('ServiceWorker registration successful with scope:',  registration.s
     {
         element.className = element.className.replace(new RegExp('(?:^|\\s)'+ className + '(?:\\s|$)'), ' ');
     }
-    function on(element, types, listener)
+    function hasClass (element, className)
     {
+        return (' ' + element.className + ' ').indexOf(' ' + className + ' ') > -1;
+    }
+    function on(element, types, listener, useCapture)
+    {
+        useCapture = useCapture === undefined ? true : false;
         var arrTypes = types.split(' ');
         for (var i = 0; i < arrTypes.length; i++)  
         {
             var type = arrTypes[i].trim();
             element.addEventListener(type, listener);
+        }
+    }
+    function off(element, types, listener)
+    {
+        var arrTypes = types.split(' ');
+        for (var i = 0; i < arrTypes.length; i++)  
+        {
+            var type = arrTypes[i].trim();
+            element.removeEventListener(type, listener);
         }
     }
     function bounds(element) 
